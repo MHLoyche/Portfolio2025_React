@@ -1,26 +1,31 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./views/navbar";
 import Header from "./views/header";
 import Footer from "./views/footer";
-import ProjectList from "./views/project_list";
-import { useProjectViewModel } from "./viewmodels/project_viewmodel";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import "./app.css";
 
 function App() {
-  const { projects, error, loading } = useProjectViewModel();
-
   return (
-    <div className="app">
-      <Header />
-      <main className="content">
-        <h1>My Projects</h1>
-
-        {loading && <p>Loading...</p>}
-        {error && <p className="error">Error: {error}</p>}
-
-        <ProjectList projects={projects} />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar />
+        <Header />
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

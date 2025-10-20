@@ -11,6 +11,8 @@ export default function ProjectList({ projects }) {
           description={p.description}
           language={p.language}
           framework={p.framework}
+          github={p.github}
+          image={p.image}
         />
       ))}
     </div>
