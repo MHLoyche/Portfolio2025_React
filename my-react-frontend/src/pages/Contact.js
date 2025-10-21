@@ -1,35 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/pages.css';
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: '', email: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
-  };
-
   return (
     <div className="page contact-page">
       <h1>Contact Me</h1>
@@ -43,15 +15,21 @@ function Contact() {
           <div className="contact-methods">
             <div className="contact-method">
               <h3>📧 Email</h3>
-              <p>MHLoyche@outlook.com</p>
+              <p>
+                <a href="mailto:MHLoyche@outlook.com" target="_blank">MHLoyche@outlook.com</a>
+              </p>
             </div>
             <div className="contact-method">
               <h3>💼 LinkedIn</h3>
-              <p>https://www.linkedin.com/in/mhloyche</p>
+              <p>
+                <a href="https://www.linkedin.com/in/mhloyche" target="_blank">https://www.linkedin.com/in/mhloyche</a>
+              </p>
             </div>
             <div className="contact-method">
               <h3>🐙 GitHub</h3>
-              <p>https://github.com/MHLoyche</p>
+              <p>
+                <a href="https://github.com/MHLoyche" target="_blank">https://github.com/MHLoyche</a>
+              </p>
             </div>
           </div>
         </div>

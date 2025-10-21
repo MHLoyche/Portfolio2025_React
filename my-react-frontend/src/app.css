@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   background-color: #1a1a2e;
@@ -44,13 +48,14 @@ h1 {
   color: #61dafb;
 }
 
-.project-card a {
+a {
   color: #61dafb; /* Your blue color */
   text-decoration: none;
   transition: color 0.3s ease;
+  text-decoration: underline;
 }
 
-.project-card a:hover {
+a:hover {
   color: #4fa8c5; /* Darker blue on hover */
   text-decoration: underline;
 }
@@ -63,9 +68,12 @@ h1 {
 }
 
 .project-image img {
+  min-width: 50px;
+  min-height: 50px;
   width: 30%;
-  height: auto;
+  height: 30%;
   max-height: 200px;
+  max-width: 200px;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;

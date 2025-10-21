@@ -12,7 +12,7 @@ export default function ProjectCard({ title, description, language, framework, g
       <p>{description}</p>
       <p><strong>Languages:</strong> {language}</p>
       <p><strong>Framework:</strong> {framework}</p>
-      <p><strong>Github:</strong> <a href={github} target={github} rel="noopener noreferrer">{github}</a></p>
+      <p><strong>Github:</strong> <a href={github} target="_blank" rel="noopener noreferrer">{github}</a></p>
     </div>
   );
 }
