@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="header">
       <h1 className="header-title">Mathias H. Løyche</h1>
-      <p className="header-subtitle">Datatechnician with speciality in programming</p>
+      <p className="header-subtitle">Datatechnician with a speciality in programming</p>
     </header>
   );
 }

@@ -1,7 +1,11 @@
 import React from 'react';
+import EducationTable from '../views/education_table';
+import { useEducationViewModel } from '../viewmodels/education_viewmodel';
 import '../styles/pages.css';
 
 function About() {
+  const { education, error, loading } = useEducationViewModel();
+
   return (
     <div className="page about-page">
       <h1>About Me</h1>
@@ -69,10 +73,14 @@ function About() {
           <h2>Education & Experience</h2>
           <p>
             I'm continuously learning and improving my skills through hands-on projects during my current studies.<br/>
-            I am currently studying to become a Datatechnician with a specialization in programming at SDE College.<br/>
+            I am currently studying to become a Datatechnician with a speciality in programming at SDE College.<br/>
             I also have almost 3 semesters on my Bachelor's in Software Technology at University of Southern Denmark (SDU)<br/>
             and 1 semester in mathematics and economy also at SDU.<br/>
           </p>
+          
+          {loading && <p className="loading-message">Loading education data...</p>}
+          {error && <p className="error-message">Error loading education: {error}</p>}
+          {!loading && !error && <EducationTable education={education} />}
         </div>
       </section>
     </div>
