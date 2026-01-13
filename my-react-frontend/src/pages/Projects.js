@@ -10,7 +10,7 @@ function Projects() {
     <div className="page projects-page">
       <h1>My Projects</h1>
       <p className="page-description">
-        Here are some of the projects I've worked on during this year.
+        Here are some of the projects I've worked on during 2025-2026.
       </p>
 
       {loading && <p className="loading-message">Loading projects...</p>}

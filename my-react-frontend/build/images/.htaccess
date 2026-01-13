@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# If it's a file or directory, serve it
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule .* - [L]
+
+# Everything else to index.html
+RewriteRule .* index.html [L]
